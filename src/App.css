@@ -1,0 +1,36 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ccc;
+
+
+}
+
+table,
+th,
+td {
+    border: 1px solid #CCC;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: lightcyan;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px;
+    width: 200px;
+}
+
+.addContactContainer {
+    margin-top: 50px;
+    padding-left: 400px;
+    width: 100%;
+    height: auto;
+}
