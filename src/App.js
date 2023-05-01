@@ -47,6 +47,12 @@ const App = () => {
     const newContacts = [...contacts, newContact];
 
     setContacts(newContacts);
+    setAddNewContact({
+      fullName: "",
+      address: "",
+      phoneNumber: "",
+      email: "",
+    });
   };
 
   //---------------------------------------------------------
