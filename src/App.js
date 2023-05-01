@@ -31,6 +31,9 @@ const App = () => {
   };
 
   const handleSubmit = (e) => {
+    // e.preventDefault();
+
+    // alert(JSON.stringify(addNewContact));
     e.preventDefault();
 
     const newContact = {
@@ -41,8 +44,9 @@ const App = () => {
       email: addNewContact.email,
     };
 
-    setContacts([...contacts, newContact]);
+    const newContacts = [...contacts, newContact];
 
+    setContacts(newContacts);
   };
 
   //---------------------------------------------------------
@@ -102,8 +106,8 @@ const App = () => {
 
   return (
     <>
-      <form onSubmit={handleEditSubmit}>
-        <div className="container">
+      <div className="container">
+        <form onSubmit={handleEditSubmit}>
           <table>
             <thead>
               <tr>
@@ -134,43 +138,42 @@ const App = () => {
               ))}
             </tbody>
           </table>
-
-          <div className="addContactContainer">
-            <h3>Add contact</h3>
-            <form onSubmit={handleSubmit}>
-              <MyInput
-                type="text"
-                name="fullName"
-                value={addNewContact.fullName}
-                placeholder={"input your name here"}
-                onChange={handleChange}
-              />
-              <MyInput
-                type="text"
-                name="address"
-                value={addNewContact.address}
-                placeholder={"input your address here"}
-                onChange={handleChange}
-              />
-              <MyInput
-                type="phone"
-                name="phoneNumber"
-                value={addNewContact.phoneNumber}
-                placeholder={"input your phoneNumber here"}
-                onChange={handleChange}
-              />
-              <MyInput
-                type="email"
-                name="email"
-                value={addNewContact.email}
-                placeholder={"input your email here"}
-                onChange={handleChange}
-              />
-              <MyButton1 type="submit" label="add" />
-            </form>
-          </div>
+        </form>
+        <div className="addContactContainer">
+          <h3>Add contact</h3>
+          <form onSubmit={handleSubmit}>
+            <MyInput
+              type="text"
+              name="fullName"
+              value={addNewContact.fullName}
+              placeholder={"input your name here"}
+              onChange={handleChange}
+            />
+            <MyInput
+              type="text"
+              name="address"
+              value={addNewContact.address}
+              placeholder={"input your address here"}
+              onChange={handleChange}
+            />
+            <MyInput
+              type="phone"
+              name="phoneNumber"
+              value={addNewContact.phoneNumber}
+              placeholder={"input your phoneNumber here"}
+              onChange={handleChange}
+            />
+            <MyInput
+              type="email"
+              name="email"
+              value={addNewContact.email}
+              placeholder={"input your email here"}
+              onChange={handleChange}
+            />
+            <MyButton1 type="submit" label="add" />
+          </form>
         </div>
-      </form>
+      </div>
     </>
   );
 };
